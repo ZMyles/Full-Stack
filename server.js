@@ -6,7 +6,7 @@ const cartItems = require("./routes/routes");
 
 app.use(express.static("./public"));
 app.use(express.json());
-app.use("/api/item", cartItems);
+app.use("/", cartItems);
 
 const port = 3000;
 app.listen(port, () => {

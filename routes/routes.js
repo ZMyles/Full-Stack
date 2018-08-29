@@ -28,5 +28,5 @@ cart.get("/cart-items", (req, res) => {
   res.send(cartItems);
 })
 
-module.exports = cartItems;
+module.exports = cart;
 
