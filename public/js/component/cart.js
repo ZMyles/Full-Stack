@@ -2,10 +2,9 @@
 const inventory = {
   template: `
   <section>
-  <input type="text" placeholder="Item ID">
-  <input type="text" placeholder="Name of Item">
-  <input type="text" placeholder="Price of Item">
-  <input type="text" placeholder="Quantity">
+      <input type="text" placeholder="Name of Item">
+      <input type="text" placeholder="Price of Item">
+      <input type="text" placeholder="Quantity">
     <button ng-click="">Update</button>
 </section>
     <button ng-click="$ctrl.getItems();">Get Inventory</button>
@@ -22,6 +21,21 @@ const inventory = {
       cartService.getAllItems().then((response) => {
         vm.cartItems = response;
       })
+    vm.addItem = (item) => {
+      cartService.addItem().then((response) => {
+        vm.cartItems = response
+      })
+    vm.removeItem = (id) => {
+      cartService.removeItem().then((response) => {
+        vm.cartItems = response;
+      })
+      vm.updateItem = (id) => {
+        cartService.updateItem ().then((response) => {
+          vm.cartItems = response;
+      })
+    }
+
+    }
   }]
   
 }
